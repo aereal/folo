@@ -13,6 +13,7 @@ gem 'sass'
 gem 'slim'
 gem 'mongoid'
 gem 'bson_ext', :require => "mongo"
+gem 'atomutil'
 
 # Test requirements
 group :test do
