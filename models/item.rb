@@ -8,4 +8,8 @@ class Item
 
   # relations
   embeds_one :hatena_fotolife_item
+
+  def url(primary_site)
+    __send__("#{primary_site}_item").url
+  end
 end

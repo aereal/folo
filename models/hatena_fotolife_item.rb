@@ -13,7 +13,7 @@ class HatenaFotolifeItem
     [Time.parse(entry_id).strftime('%Y%m%d'), entry_id].join('/')
   end
 
-  def resource_url
+  def url
     "http://img.f.hatena.ne.jp/images/fotolife/#{hatena_id.first}/#{hatena_id}/#{entry_path}.#{item.format}"
   end
 end
