@@ -9,7 +9,7 @@ class Item
   # relations
   embeds_one :hatena_fotolife_item
 
-  def url(primary_site)
-    __send__("#{primary_site}_item").url
+  def entity(service)
+    __send__("#{service}_item")
   end
 end
