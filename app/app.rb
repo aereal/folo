@@ -8,5 +8,7 @@ class Folo < Padrino::Application
 
   configure do
     set :primary_site, :hatena_fotolife
+    
+    Slim::Engine.set_default_options pretty: true
   end
 end
