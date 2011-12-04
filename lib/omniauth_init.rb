@@ -2,9 +2,8 @@ module OmniauthInitializer
   def self.registered(app)
     app.use OmniAuth::Builder do
       provider :developer unless Padrino.env == :production
-      # provider :twitter, 'consumer_key', 'consumer_secret'
-      # provider :facebook, 'app_id', 'app_secret'
+      provider :flickr, ENV['FLICKR_API_KEY'], ENV['FLICKR_API_SECRET'],
+        path_prefix: app.url_for(:auth, :index)
     end
-
   end
 end
