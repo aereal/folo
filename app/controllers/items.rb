@@ -4,7 +4,7 @@ Folo.controllers :items do
     render 'items/index'
   end
 
-  get :show, with: :id do
+  get :show, map: 'items/:id' do
     @item = Item.find(params[:id])
     render 'items/show'
   end

@@ -3,7 +3,7 @@ Folo.controllers :users do
     #
   end
 
-  get :show, with: :id do
+  get :show, map: 'users/:id' do
     content_type :text
     current_account.to_json
   end
