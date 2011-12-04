@@ -3,4 +3,4 @@ article.hentry
   == item_image_tag @item, class: 'entry-content'
   p
     | Posted at:
-    time.published== @item.created_at
+    time.published datetime=@item.created_at.iso8601 == @item.created_at.to_s(:short)
