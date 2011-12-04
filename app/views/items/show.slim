@@ -1,3 +1,6 @@
-section
-  h2= @item.title
-  == item_image_tag @item
+section.hentry
+  h2.entry-title= @item.title
+  == item_image_tag @item, class: 'entry-content'
+  p
+    | Posted at:
+    time.published== @item.created_at

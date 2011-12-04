@@ -1,3 +1,6 @@
-section
-  h2== link_to item.title, url_for(:items, :show, id: item.id)
-  == item_image_tag item
+section.hentry
+  h2.entry-title== link_to item.title, url_for(:items, :show, id: item.id), rel: :bookmark
+  == item_image_tag item, class: 'entry-content'
+  p
+    | Posted at:
+    time.published== item.created_at

@@ -2,6 +2,6 @@
 
 Folo.helpers do
   def item_image_tag(item, options={})
-    image_tag(item.entity(options.delete(:site) || settings.primary_site).url)
+    image_tag(item.entity(options.delete(:site) || settings.primary_site).url, options)
   end
 end
