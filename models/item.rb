@@ -10,6 +10,10 @@ class Item
   embeds_one :hatena_fotolife_item
   embeds_one :flickr_item
 
+  # scopes
+  scope :recent, desc(:created_at)
+  default_scope recent
+
   def entities
     %w(hatena_fotolife_item flickr_item).map {|entity_name| respond_to?(entity_name) && __send__(entity_name) }.compact
   end
