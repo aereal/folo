@@ -8,7 +8,8 @@ class Folo < Padrino::Application
 
   configure do
     set :primary_site, :hatena_fotolife
-    
+    set :site_name, 'Folo'
+
     Slim::Engine.set_default_options pretty: true
   end
 end

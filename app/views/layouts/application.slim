@@ -1,0 +1,10 @@
+doctype 5
+html
+  head
+    meta charset='UTF-8'
+    title= [@title, settings.site_name].compact.join(' - ')
+  body
+    header
+      h1= settings.site_name
+    #main role='main'
+      == yield
