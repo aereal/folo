@@ -11,6 +11,7 @@ class Folo < Padrino::Application
   configure do
     set :primary_site, :hatena_fotolife
     set :site_name, 'Folo'
+    set :available_services, [:flickr]
 
     Slim::Engine.set_default_options pretty: true
   end

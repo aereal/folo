@@ -1,5 +1,6 @@
 Folo.controllers :auth, map: :accounts do
   get :index do
+    render 'auth/index'
   end
 
   get :callback, map: 'auth/:provider/callback' do
