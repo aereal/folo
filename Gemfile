@@ -9,6 +9,8 @@ gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
 # Component requirements
+gem 'omniauth'
+gem 'omniauth-flickr'
 gem 'sass'
 gem 'slim'
 gem 'mongoid'

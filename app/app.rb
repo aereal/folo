@@ -1,8 +1,10 @@
 class Folo < Padrino::Application
+  register OmniauthInitializer
   register SassInitializer
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
+  register Padrino::Admin::AccessControl
 
   enable :sessions
 
@@ -12,4 +14,7 @@ class Folo < Padrino::Application
 
     Slim::Engine.set_default_options pretty: true
   end
+
+  # Padrino::Admin::AccessControl
+  set :login_page, '/accounts/auth'
 end
