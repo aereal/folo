@@ -18,6 +18,7 @@ class Folo < Padrino::Application
 
   # Padrino::Admin::AccessControl
   set :login_page, '/users/auth'
+  set :account_model_name, 'User'
 
   access_control.roles_for :any do |role|
     role.protect '/users/dashboard'

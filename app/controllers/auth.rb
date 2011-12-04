@@ -4,9 +4,18 @@ Folo.controllers :auth, map: :users do
   end
 
   get :callback, map: 'auth/:provider/callback' do
-    auth_info = request.env['omniauth.auth']
-    account = Account.find_by_provider_and_uid(auth_info) || Account.authorize!(auth_info)
-    set_current_account(account)
-    redirect 'http://' + request.env['HTTP_HOST'] + url(:users, :show, id: account.id)
+    auth = request.env['omniauth.auth']
+
+    if current_account
+      #
+    else
+      if user = account_model.where('accounts.provider' => auth.provider, 'accounts.uid' => auth.uid).first
+        set_current_account(user)
+      else
+        #
+      end
+    end
+
+    redirect 'http://' + request.env['HTTP_HOST'] + url(:users, :show, id: current_account.id)
   end
 end

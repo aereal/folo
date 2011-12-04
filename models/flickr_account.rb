@@ -11,12 +11,12 @@ class FlickrAccount
   embedded_in :account
 
   def authorize!(auth)
-    update_attributes! do |fa|
+    tap do |fa|
       fa.uid = auth.uid
       fa.token   = auth.credentials.token
       fa.secret  = auth.credentials.secret
 
       fa.account.name ||= auth.info.name
-    end
+    end.save!
   end
 end
