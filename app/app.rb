@@ -1,4 +1,5 @@
 class Folo < Padrino::Application
+  register OmniauthInitializer
   register SassInitializer
   register Padrino::Rendering
   register Padrino::Mailer
