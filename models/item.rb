@@ -10,7 +10,11 @@ class Item
   embeds_one :hatena_fotolife_item
   embeds_one :flickr_item
 
-  def entity(service)
-    __send__("#{service}_item")
+  def entities
+    %w(hatena_fotolife_item flickr_item).map {|entity_name| respond_to?(entity_name) && __send__(entity_name) }.compact
+  end
+
+  def entity(service=nil)
+    service ? __send__("#{service}_item") : entities.first
   end
 end
