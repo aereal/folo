@@ -1,6 +1,6 @@
-article.hentry
-  h2.entry-title== link_to item.title, url_for(:items, :show, id: item.id), rel: :bookmark
-  == item_image_tag item, class: 'entry-content'
+article.hentry itemscope=true itemtype='http://schema.org/Photograph'
+  h2.entry-title itemprop='name' == link_to item.title, url_for(:items, :show, id: item.id), rel: :bookmark, itemprop: 'url'
+  == item_image_tag item, class: 'entry-content', itemprop: 'image'
   p
     | Posted at:
     time.published datetime=item.created_at.iso8601 == item.created_at.to_s(:short)

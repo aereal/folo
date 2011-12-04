@@ -1,6 +1,6 @@
-article.hentry
-  h2.entry-title= @item.title
-  == item_image_tag @item, class: 'entry-content'
+article.hentry itemscope=true itemtype='http://schema.org/Photograph'
+  h2.entry-title itemprop='name'= @item.title
+  == item_image_tag @item, class: 'entry-content', itemprop: 'image'
   p
     | Posted at:
     time.published datetime=@item.created_at.iso8601 == @item.created_at.to_s(:short)
