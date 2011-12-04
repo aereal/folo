@@ -8,6 +8,7 @@ class Item
 
   # relations
   embeds_one :hatena_fotolife_item
+  embeds_one :flickr_item
 
   def entity(service)
     __send__("#{service}_item")
