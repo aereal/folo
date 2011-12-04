@@ -1,4 +1,4 @@
-Folo.controllers :accounts do
+Folo.controllers :users do
   get :index do
     #
   end

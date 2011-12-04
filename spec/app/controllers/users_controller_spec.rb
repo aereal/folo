@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "AccountsController" do
+describe "UsersController" do
   before do
     get "/"
   end

@@ -17,5 +17,5 @@ class Folo < Padrino::Application
   end
 
   # Padrino::Admin::AccessControl
-  set :login_page, '/accounts/auth'
+  set :login_page, '/users/auth'
 end
