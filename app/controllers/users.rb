@@ -4,6 +4,8 @@ Folo.controllers :users do
   end
 
   get :show, map: 'users/:id' do
+    @user = User.find(params[:id])
+    render 'users/show'
   end
 
   get :dashboard do
