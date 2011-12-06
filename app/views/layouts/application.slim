@@ -3,6 +3,7 @@ html
   head
     meta charset='UTF-8'
     title= [@title, settings.site_name].compact.join(' - ')
+    == stylesheet_link_tag 'moment'
   body
     header
       h1= settings.site_name
