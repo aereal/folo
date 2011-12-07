@@ -1,18 +1,18 @@
 require 'spec_helper'
 
 describe "UsersController" do
-  subject do
-    last_response
+  before do
+    get url
   end
+
+  subject { last_response }
 
   let(:user) do
     Fabricate(:user)
   end
 
   describe "#index" do
-    before do
-      get app.url_for(:users, :index)
-    end
+    let(:url) { app.url_for(:users, :index) }
 
     it "is OK" do
       should be_ok
@@ -20,9 +20,7 @@ describe "UsersController" do
   end
 
   describe "#show" do
-    before do
-      get app.url_for(:users, :show, nickname: user)
-    end
+    let(:url) { app.url_for(:users, :show, nickname: user) }
 
     it "is OK" do
       should be_ok
