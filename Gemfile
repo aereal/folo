@@ -27,6 +27,7 @@ group :test do
   gem 'guard-rspec'
   gem 'fabrication'
   gem 'database_cleaner'
+  gem 'faker'
 
   if /darwin/ === RUBY_PLATFORM
     gem 'rb-fsevent'
