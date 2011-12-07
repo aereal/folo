@@ -1,7 +1,4 @@
-Folo.controllers :accounts do
+Folo.controllers :accounts, parent: :users do
   get :index do
-  end
-
-  get :auth do
   end
 end
