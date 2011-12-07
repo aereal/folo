@@ -7,6 +7,7 @@ class Post
   field :format, :type => String
 
   # relations
+  embeds_one :photo
 
   # scopes
   scope :recent, desc(:created_at)

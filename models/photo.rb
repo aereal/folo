@@ -5,4 +5,7 @@ class Photo
   # field <name>, :type => <type>, :default => <value>
   field :photo_id, type: String
   field :provider, type: String
+
+  # relations
+  embedded_in :post
 end
