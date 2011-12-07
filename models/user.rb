@@ -23,4 +23,8 @@ class User
       account.secret = auth.credentials.secret
     end
   end
+
+  def to_param
+    nickname
+  end
 end

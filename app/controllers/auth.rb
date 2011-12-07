@@ -1,8 +1,4 @@
-Folo.controllers :auth, map: :users do
-  get :index do
-    render 'auth/index'
-  end
-
+Folo.controllers :auth, map: :accounts do
   get :callback, map: 'auth/:provider/callback' do
     auth = request.env['omniauth.auth']
 

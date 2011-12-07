@@ -3,8 +3,8 @@ Folo.controllers :users do
     #
   end
 
-  get :show, map: 'users/:id' do
-    @user = User.find(params[:id])
+  get :show, map: 'users/:nickname' do
+    @user = User.where(nickname: params[:nickname]).first
     render 'users/show'
   end
 
