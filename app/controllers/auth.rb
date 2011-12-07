@@ -1,5 +1,5 @@
-Folo.controllers :auth, map: :account do
-  get :callback, with: :provider do
+Folo.controllers :auth, map: :accounts do
+  get :callback, map: 'auth/:provider/callback' do
     auth = request.env['omniauth.auth']
 
     if current_account
