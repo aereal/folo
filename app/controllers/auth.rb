@@ -1,4 +1,8 @@
 Folo.controllers :auth, map: :accounts do
+  get :index do
+    #
+  end
+
   get :callback, map: 'auth/:provider/callback' do
     auth = request.env['omniauth.auth']
 
