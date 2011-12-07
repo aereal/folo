@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe "AuthController" do
+describe "AuthorizationsController" do
   before do
     get "/"
   end
 
   it "returns hello world" do
-    last_response.body.should == "Hello World"
+    pending
   end
 end
