@@ -21,6 +21,16 @@ gem 'atomutil'
 group :test do
   gem 'rspec'
   gem 'rack-test', :require => "rack/test"
+
+  gem 'spork', '>= 0.9.0.rc9'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'fabrication'
+
+  if /darwin/ === RUBY_PLATFORM
+    gem 'rb-fsevent'
+    gem 'ruby_gntp'
+  end
 end
 
 # Development requirements
