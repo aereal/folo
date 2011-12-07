@@ -3,6 +3,13 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 
 RSpec.configure do |conf|
   conf.include Rack::Test::Methods
+  conf.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.orm = 'mongoid'
+  end
+  conf.after(:suite) do
+    DatabaseCleaner.clean
+  end
 end
 
 def app

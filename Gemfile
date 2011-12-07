@@ -26,6 +26,7 @@ group :test do
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'fabrication'
+  gem 'database_cleaner'
 
   if /darwin/ === RUBY_PLATFORM
     gem 'rb-fsevent'
