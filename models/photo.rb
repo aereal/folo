@@ -8,4 +8,6 @@ class Photo
 
   # relations
   embedded_in :post
+
+  delegate :user, to: :post
 end

@@ -9,6 +9,7 @@ class User
 
   # relations
   embeds_many :accounts
+  has_many :posts
 
   class << self
     def find_by_id(_id)

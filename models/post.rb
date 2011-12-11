@@ -8,6 +8,7 @@ class Post
 
   # relations
   embeds_one :photo
+  belongs_to :user
 
   # scopes
   scope :recent, desc(:created_at)
