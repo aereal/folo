@@ -10,12 +10,19 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 
 # Component requirements
 gem 'omniauth'
-gem 'omniauth-flickr'
 gem 'sass'
 gem 'slim'
 gem 'mongoid'
 gem 'bson_ext', :require => "mongo"
-gem 'atomutil'
+
+# External services
+group :hatena_fotolife do
+  gem 'atomutil'
+end
+
+group :flickr do
+  gem 'omniauth-flickr'
+end
 
 # Test requirements
 group :test do

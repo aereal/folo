@@ -5,7 +5,9 @@ PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 # Load our dependencies
 require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
-Bundler.require(:default, PADRINO_ENV)
+
+services = (ENV['AVAILABLE_SERVICES'] || '').split(/\s*,\s*/).map(&:downcase)
+Bundler.require(:default, PADRINO_ENV, *services)
 
 ##
 # Enable devel logging
